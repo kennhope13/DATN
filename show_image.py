@@ -11,8 +11,8 @@ conn = psycopg2.connect(os.getenv("POSTGRES_URL"))
 cursor = conn.cursor()
 
 # Truy vấn dữ liệu
-image_id = 1  # Thay bằng ID của ảnh bạn muốn xem
-cursor.execute("SELECT image_data FROM images WHERE id = %s;", (image_id,))
+image_id = 23  # Thay bằng ID của ảnh bạn muốn xem
+cursor.execute("SELECT image_data_crop FROM crop_images WHERE id_crop = %s;", (image_id,))
 record = cursor.fetchone()
 
 if record:

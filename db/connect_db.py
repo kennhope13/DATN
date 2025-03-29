@@ -10,8 +10,8 @@ POSTGRES_URI = os.getenv("POSTGRES_URL")  # VD: "postgresql://user:password@loca
 def connect_database():
     try:
         conn = psycopg2.connect(POSTGRES_URI)
-        print("✅ PostgreSQL Connected")
+        print("PostgreSQL Connected")
         return conn
     except Exception as e:
-        print("❌ Database connection error:", e)
+        print("Database connection error:", e)
         return None
